@@ -1,5 +1,8 @@
 const { app } = require('./app');
 
+// Models
+const { initModels } = require('./models/initModels');
+
 // Utils
 const { db } = require('./utils/db.utils');
 
@@ -9,6 +12,7 @@ const serverStart = async () => {
     await db.authenticate();
 
     // Establish the relations between
+    initModels();
 
     await db.sync();
 
