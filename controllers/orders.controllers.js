@@ -6,6 +6,10 @@ const { Order } = require('../models/order.model')
 const { Meal } = require('../models/meal.model')
 const { Restaurant } = require('../models/restaurant.model')
 
+// Utils
+const { catchAsync } = require('../utils/catchAsync.utils')
+const { AppError } = require('../utils/appError.util')
+
 dotenv.config()
 
 const createOrder = catchAsync(async (req, res, next) => {

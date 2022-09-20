@@ -6,7 +6,7 @@ const {
   readOrdersByUser,
   updateOrder,
   deletOrder,
-} = require('../controllers/orders,controllers')
+} = require('../controllers/orders.controllers')
 
 // Middlewares
 const {
