@@ -7,7 +7,7 @@
     "start": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "carlos junior mejia",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

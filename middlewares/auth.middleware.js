@@ -13,20 +13,21 @@ dotenv.config()
 const protectSession = catchAsync(async (req, res, next) => {
   // Get token
   let token
+
   if (
     req.headers.authorization &&
-    req.headers.authorization.starsWith('Bearer')
+    req.headers.authorization.startsWith('Bearer')
   ) {
-    // Etract token
+    // Extract token
     token = req.headers.authorization.slice(7)
   }
 
-  // Check if token was sent or not
+  // Check if the token was sent or not
   if (!token) {
     return next(new AppError('Invalid session', 403))
   }
 
-  // verify the token
+  // Verify the token
   const decoded = jwt.verify(token, process.env.JWT_SECRET)
 
   // Verify the token's owner
@@ -70,10 +71,10 @@ const protectUsersAccount = (req, res, next) => {
 }
 
 const protectOrderOwner = (req, res, next) => {
-  const { sessionUser, order } = require
+  const { sessionUser, order } = req
 
   if (sessionUser.id !== order.userId) {
-    return next(new AppError('This order does not belong to you', 403))
+    return next(new AppError('This order does not belong to you.', 403))
   }
 
   next()
@@ -83,7 +84,7 @@ const protectReviewOwner = (req, res, next) => {
   const { sessionUser, review } = req
 
   if (sessionUser.id !== review.userId) {
-    return next(new AppError('This review does not belong to you', 403))
+    return next(new AppError('This review does not belong to you.', 403))
   }
 
   next()
