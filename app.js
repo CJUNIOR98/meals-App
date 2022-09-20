@@ -15,7 +15,7 @@ app.use(express.json())
 // Defining endpoints
 app.use('/api/v1/users', usersRouter)
 app.use('/api/v1/restaurants', restaurantRouter)
-app.use('/api/v1/meald', mealsRouter)
+app.use('/api/v1/meals', mealsRouter)
 app.use('/api/v1/orders', orderRouter)
 
 // Global error handler
