@@ -1,3 +1,4 @@
+// Utils
 const { checkValidations, body } = require('../utils/expressValidator.util')
 
 const createRestaurantValidators = [
